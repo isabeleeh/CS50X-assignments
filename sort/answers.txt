@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: huge gap between reversed data and sorted data, with the longest using random data.
+
+sort2 uses: merge sort
+
+How do you know?: very similar time usage with three kinds of data. Fairly short.
+
+sort3 uses: selection sort
+
+How do you know?: similar time usage with three kinds of data. Fairly long time period.

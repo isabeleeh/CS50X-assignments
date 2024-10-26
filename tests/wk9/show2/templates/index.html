@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale", width="device-width">
+        <title>movies</title>
+    </head>
+    <body>
+
+        <input autocomplete="off" autofocus placeholder="Query" type="text">
+
+        <ul></ul>
+
+        <script>
+
+            let input = document.querySelector('input');
+            input.addEventListener('input', async function() {
+                let response = await fetch('/search?q=' + input.value);
+                let movies = await response.json();
+                let html = '';
+                for (let id in movies) {
+                    let title = movies[id].title.replace('<', '&lt;').replace('&', '&amp;');
+                    //let title = movies[id].title;
+                    html += '<li>' + title + '</li>' + '</br>';
+                }
+                document.querySelector('ul').innerHTML = html;
+            })
+        </script>
+    </body>
+</html>
